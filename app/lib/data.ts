@@ -8,6 +8,7 @@ import {
   Revenue,
 } from "./definitions";
 import { formatCurrency } from "./utils";
+import { unstable_noStore } from "next/cache";
 
 export async function fetchRevenue() {
   try {

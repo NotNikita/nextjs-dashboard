@@ -1,22 +1,33 @@
 /** @type {import('next').NextConfig} */
 
 const nextConfig = {
-    rewrites: async () => {
-        return [
-          {
-            source: '/dashboard',
-            destination: '/pages/dashboard',
-          },
-          {
-            source: '/dashboard/customers',
-            destination: '/pages/dashboard/customers',
-          },
-          {
-            source: '/dashboard/invoices',
-            destination: '/pages/dashboard/invoices',
-          },
-        ]
-      }
+  experimental: {
+    ppr: 'incremental'
+  },
+  rewrites: async () => {
+    return [
+      {
+        source: '/dashboard',
+        destination: '/pages/dashboard',
+      },
+      {
+        source: '/dashboard/customers',
+        destination: '/pages/dashboard/customers',
+      },
+      {
+        source: '/dashboard/invoices',
+        destination: '/pages/dashboard/invoices',
+      },
+      {
+        source: '/dashboard/invoices/create',
+        destination: '/pages/dashboard/invoices/create',
+      },
+      {
+        source: '/dashboard/invoices/:id/edit',
+        destination: '/pages/dashboard/invoices/:id/edit',
+      },
+    ];
+  }
 };
 
 export default nextConfig;
