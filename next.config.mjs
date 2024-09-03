@@ -7,6 +7,10 @@ const nextConfig = {
   rewrites: async () => {
     return [
       {
+        source: '/login',
+        destination: '/pages/login',
+      },
+      {
         source: '/dashboard',
         destination: '/pages/dashboard',
       },
